@@ -9,6 +9,13 @@ class AdminController extends Controller
 {
     //
 
+    public function admin()
+    {
+        return view('dashboard');
+    }
+
+
+
     public function cadProdutores()
     {
         $produtores = ImagensProdModel::all();

@@ -18,9 +18,9 @@ Route::get('/regioes', function () {
     return view('regioes');
 });
 
-Route::get('/admin', function () {
-    return view('dashboard');
-});
+// Route::get('/admin', function () {
+//     return view('dashboard');
+// });
 
 Route::get('/tras-os-montes', function () {
     return view('tras-os-montes');
@@ -91,6 +91,8 @@ Route::get('/produtos/{id}', 'produtosController@mostrarProduto');
 //Route::get('/index/login.php', function(){
 //    return view ('login');
 //});
+
+Route::get('/admin', 'AdminController@admin')->name('admin');
 
 Route::get('/cadProdutores', 'AdminController@cadProdutores')->name('cadProdutores');
 Route::post('/cadProdutores/insert', 'AdminController@insert');
