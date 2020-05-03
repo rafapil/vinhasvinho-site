@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class imagensprodModel extends Model
+class ImagensProdModel extends Model
 {
-    protected $table = "imagens";
-    protected $primaryKey = "imgprod_id";
+    public $table = "imagensprod";
+    public $primaryKey = "imgprod_id";
     public $timestamps = false;
 }

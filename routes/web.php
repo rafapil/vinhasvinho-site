@@ -14,69 +14,69 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/regioes', function (){
-    return view ('regioes');
+Route::get('/regioes', function () {
+    return view('regioes');
 });
 
-Route::get('/admin', function (){
-    return view ('dashboard');
+Route::get('/admin', function () {
+    return view('dashboard');
 });
 
-Route::get('/tras-os-montes', function (){
-    return view ('tras-os-montes');
+Route::get('/tras-os-montes', function () {
+    return view('tras-os-montes');
 });
 
 
-Route::get('/produtores', function (){
+Route::get('/produtores', function () {
     return view('produtores2');
 });
 
-Route::get('cadastropf',function (){
+Route::get('cadastropf', function () {
     return view('cadastropf');
 });
 
-Route::get('cadastropj',function (){
+Route::get('cadastropj', function () {
     return view('cadastropj');
 });
 
-Route::get('Carrinho',function (){
+Route::get('Carrinho', function () {
     return view('Carrinho');
 });
 
-Route::get('contato',function (){
+Route::get('contato', function () {
     return view('contato');
 });
 
-Route::get('devolucao',function (){
+Route::get('devolucao', function () {
     return view('devolucao');
 });
 
-Route::get('douro',function (){
+Route::get('douro', function () {
     return view('douro');
 });
 
-Route::get('faq',function (){
+Route::get('faq', function () {
     return view('faq');
 });
 
-Route::get('login', function (){
+Route::get('login', function () {
     return view('login');
 });
 
-Route::get('minho', function (){
+Route::get('minho', function () {
     return view('minho');
 });
 
-Route::get('politicafrete', function (){
+Route::get('politicafrete', function () {
     return view('politicafrete');
 });
 
 
-Route::get('privacidade', function (){
+Route::get('privacidade', function () {
     return view('privacidade');
 });
 
-Route::get('quemsomos', function (){
+Route::get('quemsomos', function () {
     return view('quemsomos');
 });
 
@@ -91,3 +91,8 @@ Route::get('/produtos/{id}', 'produtosController@mostrarProduto');
 //Route::get('/index/login.php', function(){
 //    return view ('login');
 //});
+
+Route::get('/cadProdutores', 'AdminController@cadProdutores')->name('cadProdutores');
+
+Route::post('/cadProdutores/insert', 'AdminController@insert');
+Route::get('/cadProdutores/remove/{id}', 'AdminController@remove');
