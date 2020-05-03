@@ -93,6 +93,7 @@ Route::get('/produtos/{id}', 'produtosController@mostrarProduto');
 //});
 
 Route::get('/cadProdutores', 'AdminController@cadProdutores')->name('cadProdutores');
-
 Route::post('/cadProdutores/insert', 'AdminController@insert');
 Route::get('/cadProdutores/remove/{id}', 'AdminController@remove');
+
+Route::get('/cadProdutos', 'AdminController@cadProdutos')->name('cadProdutos');

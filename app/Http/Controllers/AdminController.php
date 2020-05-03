@@ -13,7 +13,7 @@ class AdminController extends Controller
     {
         $produtores = ImagensProdModel::all();
 
-        return view('cadProdutores', compact('produtores'));
+        return view('admin.cadProdutores', compact('produtores'));
     }
 
     public function insert(Request $request)
@@ -47,5 +47,13 @@ class AdminController extends Controller
         $removeProdutores = ImagensProdModel::find($id);
         $removeProdutores->delete();
         return redirect('/cadProdutores');
+    }
+
+    // bloco responsavel pelo cadastro e adm dos produtos 
+
+    public function cadProdutos()
+    {
+
+        return view('admin.cadProdutos');
     }
 }

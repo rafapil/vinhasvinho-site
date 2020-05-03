@@ -40,7 +40,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <a href="#">Gestão de produtos</a>
+                <a href="/cadProdutos">Gestão de produtos</a>
               </div>
             </div>
           </div>
@@ -128,8 +128,14 @@
         <div class="col-lg-6 col-md-12">
           <div class="card">
             <div class="card-header card-header-warning">
-              <h4 class="card-title">Employees Stats</h4>
-              <p class="card-category">New employees on 15th September, 2016</p>
+              <h4 class="card-title">Gestão de categorias</h4>
+              <form id="wf-form-squad" method="post" action="#">
+                @csrf
+                <label for="name_empresa" class="mt-1 ml-3">Cadastro de categoria</label>
+                <input type="text" class="w-input" maxlength="256" name="name_empresa" data-name="Name 2" placeholder=""
+                  id="name_empresa" required>
+                <input type="submit" value="Incluir" data-wait="Por favor aguarde..." class="w-button mt-2 my-2">
+              </form>
             </div>
             <div class="card-body table-responsive">
               <table class="table table-hover">
@@ -176,7 +182,13 @@
           <div class="card">
             <div class="card-header card-header-warning">
               <h4 class="card-title">Employees Stats</h4>
-              <p class="card-category">New employees on 15th September, 2016</p>
+              <form id="wf-form-squad" method="post" action="#">
+                @csrf
+                <label for="name_empresa" class="mt-1 ml-3">Cadastro de categoria</label>
+                <input type="text" class="w-input" maxlength="256" name="name_empresa" data-name="Name 2" placeholder=""
+                  id="name_empresa" required>
+                <input type="submit" value="Incluir" data-wait="Por favor aguarde..." class="w-button mt-2 my-2">
+              </form>
             </div>
             <div class="card-body table-responsive">
               <table class="table table-hover">
