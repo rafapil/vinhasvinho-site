@@ -98,4 +98,11 @@ Route::get('/cadProdutores', 'AdminController@cadProdutores')->name('cadProdutor
 Route::post('/cadProdutores/insert', 'AdminController@insert');
 Route::get('/cadProdutores/remove/{id}', 'AdminController@remove');
 
+
 Route::get('/cadProdutos', 'AdminController@cadProdutos')->name('cadProdutos');
+
+Route::get('/categoria/remove/{id}', 'AdminController@categoriaRemove');
+Route::post('/categoria/insert', 'AdminController@insertCategoria');
+
+Route::get('/regiao/remove/{id}', 'AdminController@regiaoRemove');
+Route::post('/regiao/insert', 'AdminController@insertRegiao');
