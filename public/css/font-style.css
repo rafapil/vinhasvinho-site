@@ -1,0 +1,26 @@
+/* Definição das fontes
+Fontes que foram necessarias importar Gotham <nao existe no google fonts
+
+*/
+
+@font-face {
+    src: url(../fonts/gotham.otf);
+    font-family: 'Gotham-Regular';
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(../fonts/gotham-bold.otf);
+    font-family: 'Gotham-Bold';
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(../fonts/gotham-black.otf);
+    font-family: 'Gotham-Black';
+    font-weight: normal;
+}
+
+body {
+    font-family: 'Gotham-Regular';
+}
