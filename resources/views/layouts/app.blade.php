@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta lang="pt-br">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Vinhas e Vinhos</title>
 
     <!-- css font e icones -->
@@ -24,11 +25,46 @@
 <body>
     <header class="text-white container">
         <ul class="nav float-right ml-auto nav-1">
-            <li class="nav-item"><a class="nav-link active text-white" href="login"><i class="fa fa-user"
-                        id="userIcon"></i>&nbsp;Minha Conta</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="Carrinho"><i class="fa fa-shopping-cart"
-                        id="cartIcon"></i>&nbsp;Carrinho</a></li>
+            <!-- Authentication Links -->
+            @guest
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ route('login') }}"><i class="fa fa-user"
+                        id="userIcon"></i>&nbsp;Minha
+                    Conta</a>
+            </li>
+            @if (Route::has('register'))
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ route('carrinho') }}"><i class="fa fa-shopping-cart"
+                        id="cartIcon"></i>&nbsp;Carrinho</a>
+            </li>
+            @endif
+            @else
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Bem Vindo !
+                    <i class="fa fa-user" id="userIcon"></i>&nbsp;{{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#"><i class="fa fa-shopping-cart"
+                        id="cartIcon"></i>&nbsp;Carrinho</a>
+            </li>
+            @endguest
         </ul>
+
+
+        {{-- Aqui é parte dedicada para as redes sociais  --}}
         <ul class="nav text-white nav-2">
             <li class="nav-item nav-social"><a class="nav-link active" href="#"><i class="icon-social-facebook"
                         id="faceIcon"></i></a></li>
