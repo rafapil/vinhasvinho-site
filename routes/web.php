@@ -106,3 +106,11 @@ Route::post('/categoria/insert', 'AdminController@insertCategoria');
 
 Route::get('/regiao/remove/{id}', 'AdminController@regiaoRemove');
 Route::post('/regiao/insert', 'AdminController@insertRegiao');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
